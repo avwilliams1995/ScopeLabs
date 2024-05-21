@@ -1,13 +1,13 @@
 # Project Title
 Scope Labs Take Home Assessment
 
-# Frontend - React.js/Typescript and Tailwind
+# Frontend - React.js/Typescript and Tailwind CSS
 # Backend - Node.js/Express.js 
 # Design - Created a Figma (in root folder), but did not spend too much time on it since I was on a bit of a time crunch. 
 
 ## Overview
 
-This is a web application that allows users to create, comment on, and watch educational videos. For a user, they are given the opportunity to create posts, edit posts, view and comment on posts, and view videos. The application is mobile friendly as well, enabling users from both web and mobile to use the app. 
+This is a web application that allows users to create, comment on, and watch educational videos. For a user, they are given the opportunity to create posts, edit posts, view and comment on posts, and view videos. The application is mobile friendly as well, enabling users to have an enjoyable experience from both desktop and mobile. 
 
 ## Features
 
@@ -72,6 +72,6 @@ I had a blast working on this! This was a great test to some of my skills, both 
 
 Contributors names and contact info
 
-ex. Drew Williams  
-ex. [@LinkedIn](https://www.linkedin.com/in/andrew-vaughan-williams/)
+Drew Williams  
+[@LinkedIn](https://www.linkedin.com/in/andrew-vaughan-williams/)
 
