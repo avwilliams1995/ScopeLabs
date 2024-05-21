@@ -4,7 +4,6 @@ const ApiController = {
   // Get Videos
   async getVideos(req: Request, res: Response, next: NextFunction) {
     const user_id = req.params["user_id"]
-    console.log(req.params)
     try {
       const response = await fetch(
         `https://take-home-assessment-423502.uc.r.appspot.com/api/videos?user_id=${user_id}`,
@@ -42,7 +41,6 @@ const ApiController = {
         }
       );
       const data = await response.json();
-      console.log('data', data)
       res.locals.response = data;
       return next();
     } catch {
@@ -67,7 +65,6 @@ const ApiController = {
         }
       );
       res.locals.comments = await response.json();
-      console.log(res.locals.comments);
       return next();
     } catch {
       return next({

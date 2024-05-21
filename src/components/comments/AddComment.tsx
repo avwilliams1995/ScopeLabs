@@ -48,7 +48,6 @@ function AddComment({
         refreshComments();
       })
       .catch((error) => {
-        console.log(error);
         alert("Error in commenting on post");
       });
   };

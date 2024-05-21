@@ -17,7 +17,6 @@ function EditPostModal({
   const [title, setTitle] = useState<string>(videoData.title);
   const [description, setDescription] = useState<string>(videoData.description);
   const [error, setError] = useState<string | null>(null);
-  console.log("in edit post", videoData);
 
   // useEffect(()=> {
   //   setTitle(videoData.title);

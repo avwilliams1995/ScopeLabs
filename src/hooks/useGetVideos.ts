@@ -19,7 +19,6 @@ export default function useGetVideos({user_id}:{user_id:string}):GetVideoProps {
       .then((data) => {
         setIsLoading(false);
         setVideoData(data.videos);
-        console.log('got videos', data.videos)
       })
       .catch(() => setError("Error in fetching videos"));
       return videoData;
