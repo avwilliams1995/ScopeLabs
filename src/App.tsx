@@ -1,4 +1,4 @@
-import { useState, useLayoutEffect } from "react";
+import { useState, useLayoutEffect, useEffect } from "react";
 import useGetVideos from "./hooks/useGetVideos";
 import { GetVideoProps, VideoProps, UserProps } from "./types";
 import Navbar from "./components/navbar/Navbar";
@@ -28,7 +28,6 @@ function App() {
     };
     handleResize();
   }, []);
-  console.log('is mobile', isMobile)
 
   // be able to refresh posts after editing, new post, etc.
   const refreshPosts = async () => {
@@ -38,6 +37,10 @@ function App() {
       alert("Error refreshing posts");
     }
   };
+
+  useEffect(() => {
+    getVideos();
+  }, [currentUser]);
 
   return (
     <div className="bg-gradient-to-b from-main from-40% to-white h-screen ">
@@ -58,18 +61,24 @@ function App() {
       />
 
       <div className="flex flex-col items-center px-15 mt-5 ">
-        <h1 className="text-[2.5rem] font-medium text-center">Welcome to Learnwell!</h1>
+        <h1 className="text-[2.5rem] font-medium text-center">
+          Welcome to Learnwell!
+        </h1>
         {currentUser.name !== "" ? (
           <p>Click on a card below to join a conversation</p>
         ) : (
           <p>Login to see user's posts</p>
         )}
         {/* if loading, have load wheel display. If not, display videos */}
-        {!isLoading  ? (
+        {!isLoading ? (
           <section
             className={
-              videoData.length > 0
-                ? `${isMobile ? "flex flex-col w-full items-center mb-20" : "grid grid-cols-3 gap-12 mb-20"} mt-10`
+              videoData.length > 0 && currentUser.name !== ""
+                ? `${
+                    isMobile
+                      ? "flex flex-col w-full items-center mb-20"
+                      : "grid grid-cols-3 gap-12 mb-20"
+                  } mt-10`
                 : "flex items-center mt-20"
             }
           >
@@ -84,7 +93,7 @@ function App() {
               ))
             ) : (
               <div>
-                <p>No posts to see</p>
+                <p className="text-center">No posts to see</p>
               </div>
             )}
           </section>

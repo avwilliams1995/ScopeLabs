@@ -9,6 +9,7 @@ export default function useGetVideos({user_id}:{user_id:string}):GetVideoProps {
   
 
   const getVideos = async () => {
+    setIsLoading(true);
     if (user_id===""){
       setIsLoading(false);
       return;
@@ -21,10 +22,11 @@ export default function useGetVideos({user_id}:{user_id:string}):GetVideoProps {
         console.log('got videos', data.videos)
       })
       .catch(() => setError("Error in fetching videos"));
+      return videoData;
   }
 
   useEffect(() => {
-    getVideos()
+    getVideos();
   }, [user_id]);
 
   return { videoData, error, isLoading, getVideos };

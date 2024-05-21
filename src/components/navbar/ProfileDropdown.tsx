@@ -2,7 +2,7 @@ import { Menu, Transition } from "@headlessui/react";
 import {  Fragment } from "react";;
 import { NavbarProps } from "../../types";
 
-const ProfileDropdown = ({ currentUser, setCurrentUser }: NavbarProps) => {
+const ProfileDropdown = ({ currentUser, setCurrentUser, refreshPosts }: NavbarProps) => {
   // profile dropdown component using headless ui
   
   return (
@@ -36,6 +36,8 @@ const ProfileDropdown = ({ currentUser, setCurrentUser }: NavbarProps) => {
                       onClick={() => {
                         setCurrentUser({ name: "", avatar: "" }) 
                         alert("Log out successful")
+                        refreshPosts()
+                        
                       }}
                     >
                       Sign out
