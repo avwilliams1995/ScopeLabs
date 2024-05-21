@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Dispatch, SetStateAction } from "react";
 import { UserProps } from "../../types";
+import ReactPlayer from "react-player";
 
 interface CreatePostModalProps {
   currentUser: UserProps;
@@ -17,6 +18,8 @@ function CreatePostModal({
   const [description, setDescription] = useState<string>("");
   const [videoUrl, setVideoUrl] = useState<string>("");
   const [error, setError] = useState<string | null>(null);
+
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -54,9 +57,18 @@ function CreatePostModal({
         >
           x
         </button>
-        <div className="min-h-[60vh]  bg-gray-50 flex flex-col justify-start py-12 sm:px-6 lg:px-8 px-6">
+        <div className="min-h-[60vh] bg-gray-50 flex flex-col justify-start py-4 sm:py-8 sm:px-6 lg:px-8 px-6">
           <div className=" sm:mx-auto sm:w-full sm:max-w-md">
             <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+              {videoUrl.length > 0 ? (
+                <ReactPlayer
+                  url={videoUrl}
+                  width="100%"
+                  height={190}
+                  controls={true}
+                />
+              ) : null}
+              
               <form>
                 <div>
                   {error ? (
@@ -66,7 +78,7 @@ function CreatePostModal({
                   ) : null}
                   <label
                     htmlFor="username"
-                    className="block text-sm font-medium leading-5 text-gray-700"
+                    className="block mt-5 text-sm font-medium leading-5 text-gray-700"
                   >
                     Video URL
                   </label>

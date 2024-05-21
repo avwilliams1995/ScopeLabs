@@ -13,7 +13,8 @@ This is a web application that allows users to create, comment on, and watch edu
 # Create a post
 1. Click the "Create" button once logged in, and simply follow instruction.
 
-![Create_post](https://github.com/avwilliams1995/ScopeLabs/assets/140551151/fca19c76-6e62-4ff9-8261-db384b22670d)
+![Create_Post](https://github.com/avwilliams1995/ScopeLabs/assets/140551151/b8567483-c299-4e63-b41d-deb5e865c2bd)
+
 
 # View a post
 1. Login
