@@ -40,7 +40,7 @@ function App() {
   };
 
   return (
-    <div className="bg-gradient-to-b from-main from-40% to-white h-screen">
+    <div className="bg-gradient-to-b from-main from-40% to-white h-screen ">
       {/* open post modal if there is currentPost data, meaning post was selected */}
       {currentPost ? (
         <PostModal
@@ -69,7 +69,7 @@ function App() {
           <section
             className={
               videoData.length > 0
-                ? `${isMobile ? "flex flex-col w-full items-center" : "grid grid-cols-3 gap-12"} mt-10`
+                ? `${isMobile ? "flex flex-col w-full items-center mb-20" : "grid grid-cols-3 gap-12 mb-20"} mt-10`
                 : "flex items-center mt-20"
             }
           >
