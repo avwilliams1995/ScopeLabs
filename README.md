@@ -11,6 +11,9 @@ This is a web application that allows users to create, comment on, and watch edu
 
 ## Features
 
+![AllPosts](https://github.com/Auda-v1/Auda/assets/140551151/a1288f4d-5129-41bc-b70f-ab1639389815)
+
+
 # Create a post
 1. Click the "Create" button once logged in, and simply follow instruction.
 
