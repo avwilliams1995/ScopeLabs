@@ -32,7 +32,7 @@ function PostCard({
             ? setCurrentPost({ ...videoData, avatar })
             : alert("Please login to join the conversation!");
         }}
-        className="py-3 px-3 bg-gradient-to-b from-secondary from-10% to-white h-[45vh] w-[30vw] flex flex-col justify-between items-center rounded-lg cursor-pointer hover:shadow-lg transition duration-300 ease-in-out"
+        className="py-3 px-3 mt-5 sm:mt-0 bg-gradient-to-b from-secondary from-10% to-white h-[45vh] w-[90vw] sm:w-[30vw] flex flex-col justify-between items-center rounded-lg cursor-pointer hover:shadow-lg transition duration-300 ease-in-out"
       >
         <ReactPlayer
           url={videoData.video_url}

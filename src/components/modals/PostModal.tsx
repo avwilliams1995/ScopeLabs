@@ -40,7 +40,7 @@ function PostModal({
 
   return (
     <div className="fixed w-full h-full h-screen bg-black bg-opacity-45 flex justify-center items-center ">
-      <div className="fixed top-20 flex flex-col h-full overflow-scroll">
+      <div className="fixed top-20 flex flex-col h-full overflow-scroll no-scrollbar">
         <button
           onClick={togglePostModal}
           className="text-black text-xl place-self-end cursor:pointer"
@@ -58,8 +58,8 @@ function PostModal({
         ) : null}
         {/* if not laoding, display the post content. If loading, display wheel */}
         {!isLoading ? (
-          <div className="w-[60vw]  bg-gradient-to-b from-secondary from-60% to-white flex flex-col justify-center py-12 sm:px-6 lg:px-8 px-6 rounded-md mb-40">
-            <div className="self-center bg-white w-full h-[50vh]">
+          <div className="w-[95vw] sm:w-[60vw] bg-gradient-to-b from-secondary from-60% to-white flex flex-col justify-center py-12 sm:px-6 lg:px-8 px-6 rounded-md mb-40">
+            <div className="self-center bg-white w-full h-[30vh] sm:h-[60vh]">
               <ReactPlayer
                 url={videoData.video_url}
                 width="100%"

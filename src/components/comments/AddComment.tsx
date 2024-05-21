@@ -16,13 +16,10 @@ function AddComment({
   const onFocus = () => setFocused(true);
   const onBlur = () => setFocused(false);
 
-  useEffect(() => {
-    setComment("");
-  }, [focused]);
-
   // handle cancel comment to set focused to false to remove input
   const handleCancel = () => {
     setFocused(false);
+    setComment("");
   };
 
   // handle submit comment
@@ -72,12 +69,12 @@ function AddComment({
             onChange={(e) => setComment(e.target.value)}
             value={comment}
             placeholder="Add a comment"
-            className="ml-3 w-[30vw] h-10 bg-transparent placeholder-black/80 border-none focus:outline-none"
+            className="ml-3 w-[45vw] sm:w-[30vw] h-10 bg-transparent placeholder-black/80 border-none focus:outline-none"
           />
           <div className="w-full ml-2 border-b border-black"></div>
         </div>
         {
-          <>
+          <div className="flex md:flex-row flex-col items-center justify-center">
             <button
               className="ml-5 text-[.8rem] px-3 py-1 bg-main rounded-md hover:brightness-110 cursor-pointer "
               onClick={handleSubmit}
@@ -85,12 +82,12 @@ function AddComment({
               Comment
             </button>
             <button
-              className="ml-2 text-[.8rem] px-3 py-1 bg-black/20 rounded-md hover:bg-black/25 cursor-pointer "
+              className="mt-1 md:mt-0 md:ml-2 text-[.8rem] px-3 py-1 bg-black/20 rounded-md hover:bg-black/25 cursor-pointer "
               onClick={handleCancel}
             >
               Cancel
             </button>
-          </>
+          </div>
         }
       </div>
     </div>

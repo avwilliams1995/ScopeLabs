@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useLayoutEffect } from "react";
 import useGetVideos from "./hooks/useGetVideos";
 import { GetVideoProps, VideoProps, UserProps } from "./types";
 import Navbar from "./components/navbar/Navbar";
@@ -15,6 +15,20 @@ function App() {
   const { videoData, error, isLoading, getVideos }: GetVideoProps =
     useGetVideos({ user_id: currentUser.name });
   const [currentPost, setCurrentPost] = useState<VideoProps | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // check if mobile or not
+  useLayoutEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 720) {
+        setIsMobile(true);
+      } else {
+        setIsMobile(false);
+      }
+    };
+    handleResize();
+  }, []);
+  console.log('is mobile', isMobile)
 
   // be able to refresh posts after editing, new post, etc.
   const refreshPosts = async () => {
@@ -26,7 +40,7 @@ function App() {
   };
 
   return (
-    <div className="bg-gradient-to-b from-main from-40% to-white h-screen mb-20">
+    <div className="bg-gradient-to-b from-main from-40% to-white h-screen">
       {/* open post modal if there is currentPost data, meaning post was selected */}
       {currentPost ? (
         <PostModal
@@ -43,23 +57,23 @@ function App() {
         refreshPosts={refreshPosts}
       />
 
-      <div className="flex flex-col items-center px-15 mt-5">
-        <h1 className="text-[2.5rem] font-medium">Welcome to Learnwell!</h1>
+      <div className="flex flex-col items-center px-15 mt-5 ">
+        <h1 className="text-[2.5rem] font-medium text-center">Welcome to Learnwell!</h1>
         {currentUser.name !== "" ? (
           <p>Click on a card below to join a conversation</p>
         ) : (
           <p>Login to see user's posts</p>
         )}
         {/* if loading, have load wheel display. If not, display videos */}
-        {!isLoading ? (
+        {!isLoading  ? (
           <section
             className={
               videoData.length > 0
-                ? "grid grid-cols-3 gap-12 mt-10"
+                ? `${isMobile ? "flex flex-col w-full items-center" : "grid grid-cols-3 gap-12"} mt-10`
                 : "flex items-center mt-20"
             }
           >
-            {videoData?.length > 0 || currentUser.name == "" ? (
+            {videoData.length > 0 && currentUser.name !== "" ? (
               videoData.map((video, index) => (
                 <PostCard
                   currentUser={currentUser}
@@ -70,16 +84,16 @@ function App() {
               ))
             ) : (
               <div>
-                <p>No posts yet</p>
+                <p>No posts to see</p>
               </div>
             )}
           </section>
         ) : (
           // loading wheel
-          <div role="status">
+          <div role="status ">
             <svg
               aria-hidden="true"
-              className="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
+              className="w-8 mt-20 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
               viewBox="0 0 100 101"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
