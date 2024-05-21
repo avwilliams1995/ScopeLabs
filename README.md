@@ -13,20 +13,27 @@ This is a web application that allows users to create, comment on, and watch edu
 # Create a post
 1. Click the "Create" button once logged in, and simply follow instruction.
 
+![Create_post](https://github.com/avwilliams1995/ScopeLabs/assets/140551151/fca19c76-6e62-4ff9-8261-db384b22670d)
+
 # View a post
 1. Login
 2. Click on a post card on the home page if there are any posts made by the user.
 3. If not, create a post, then click into the post card to view post in larger window.
 
-# Make a comment
+![ViewPost](https://github.com/avwilliams1995/ScopeLabs/assets/140551151/ad4319e3-5efe-4aa5-a869-f895a69e8805)
+
+# View comments or Make a comment
 1. Click into a post card
 2. Scroll down and view comments, or add a comment in the "Add comment" section
+
+![View:Add_Comment](https://github.com/avwilliams1995/ScopeLabs/assets/140551151/4e70f847-30f7-42f8-80fe-b378c377ab62)
 
 # Edit a post
 
 1. Click on a post card you would like to edit
 2. Click the "Edit Post" button and follow instructions
 
+![Edit_post](https://github.com/avwilliams1995/ScopeLabs/assets/140551151/e6098fe8-3461-4e69-a2e7-e9132ec7f6d3)
 
 
 ### Installing
