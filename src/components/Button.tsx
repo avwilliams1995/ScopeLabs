@@ -10,7 +10,9 @@ function Button({ children, ...props }) {
   return (
     <motion.button
       {...props}
-      className="md:px-7 md:py-2 px-3 py-2 rounded-md relative radial-gradient"
+      className={`md:px-7 md:py-2 px-3 py-2 rounded-md  ${
+        props.color ? `${props.color} hover:bg-main/70` : "radial-gradient hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-black/10"
+      } `}
       // animate the button to slide in from the left, ignore ts error, this works for ensuring the button text slides in from the left
       initial={{ "--x": "100%" }}
       animate={{ "--x": "-100%" }}

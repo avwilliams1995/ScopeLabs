@@ -4,10 +4,11 @@ import { AvatarGenerator } from "random-avatar-generator";
 import { useEffect, useState } from "react";
 
 function Comment({ comment }: { comment: CommentProps }) {
+  // individual comment component
   const [randomAvatar, setRandomAvatar] = useState<string>("");
   const daysBetween =
-    new Date().getDate() - new Date(comment.created_at).getDate();
-  console.log(comment, daysBetween);
+    new Date().getDate() - new Date(comment.created_at || "").getDate();
+
   // Use the useEffect hook to generate a random avatar
   useEffect(() => {
     const generator = new AvatarGenerator();

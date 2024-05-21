@@ -1,16 +1,18 @@
 import { Menu, Transition } from "@headlessui/react";
-import { Dispatch, Fragment, SetStateAction, useState } from "react";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import { ProfileDropdownProps } from "../../types";
+import {  Fragment } from "react";;
+import { NavbarProps } from "../../types";
 
-const ProfileDropdown = ({ user, setCurrentUser }: ProfileDropdownProps) => {
+const ProfileDropdown = ({ currentUser, setCurrentUser }: NavbarProps) => {
+  // profile dropdown component using headless ui
+  
   return (
     <>
       <div>
         <Menu as="div" className={`relative inline-block text-clip text-left sm:ml-5 `}>
           <div>
-            <Menu.Button className="inline-flex truncate px-2 py-2  justify-center items-center rounded-lg bg-transparent text-[.7rem] sm:text-[.8rem] md:text-[.9rem] font-medium text-black hover:bg-black/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75">
-              {`@${user}`}
+            <Menu.Button className="inline-flex truncate px-1 py-1  justify-center items-center rounded-lg bg-transparent text-[.7rem] sm:text-[.8rem] md:text-[.9rem] font-medium text-black hover:bg-black/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75">
+            <img src={currentUser.avatar} alt="avatar" className="h-[6vh] rounded-full mr-2" />
+              {`@${currentUser.name}`}
               
             </Menu.Button>
           </div>
@@ -32,7 +34,7 @@ const ProfileDropdown = ({ user, setCurrentUser }: ProfileDropdownProps) => {
                         active ? "bg-black/10 text-black" : "text-gray-900"
                       } group flex w-full items-start rounded-md px-1 py-1 text-[.8rem]`}
                       onClick={() => {
-                        setCurrentUser(null) 
+                        setCurrentUser({ name: "", avatar: "" }) 
                         alert("Log out successful")
                       }}
                     >

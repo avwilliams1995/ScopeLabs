@@ -37,17 +37,25 @@ export interface CommentProps {
   content: string;
   user_id: string;
   video_id: string;
-  created_at: string;
+  created_at?: string;
 }
 
-export interface ProfileDropdownProps {
-  user: string | null;
-  setCurrentUser: Dispatch<SetStateAction<string | null>>;
+export interface NavbarProps {
+  currentUser: UserProps;
+  setCurrentUser: Dispatch<SetStateAction<UserProps>>;
+  refreshPosts: () => void; 
 }
 
 export interface GetVideoProps {
-  videoData: VideoProps[] | null;
+  videoData: VideoProps[];
   error: string | null;
   isLoading: boolean;
   getVideos: () => void;  
 }
+
+export interface UserProps {
+  name: string;
+  avatar: string;
+}
+
+

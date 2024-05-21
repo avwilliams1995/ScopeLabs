@@ -1,21 +1,28 @@
-import React, { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import LOGO_ICON from "../../assets/LOGO_ICON.png";
+import { AvatarGenerator } from "random-avatar-generator";
+import { UserProps } from "../../types";
 
 interface LoginModalProps {
   setIsModalOpen: Dispatch<SetStateAction<boolean>>;
-  setCurrentUser: Dispatch<SetStateAction<string | null>>;
+  setCurrentUser: Dispatch<SetStateAction<UserProps>>;
 }
 
 function LoginModal({ setIsModalOpen, setCurrentUser }: LoginModalProps) {
+  // login modal component
   const [userName, setUserName] = useState<string>("");
   const [error, setError] = useState<string | null>(null);
 
+  // Use the handleSubmit function to set the current user
   const handleSubmit = (e) => {
     e.preventDefault();
+    // check if username is valid
     if (userName.length === 0 || userName.includes(" ")) {
       setError("Invalid username");
     } else {
-      setCurrentUser(userName);
+      const generator = new AvatarGenerator();
+      const randomAvatar = generator.generateRandomAvatar();
+      setCurrentUser({ name: userName, avatar: randomAvatar });
       setIsModalOpen(false);
     }
   };
@@ -98,7 +105,7 @@ function LoginModal({ setIsModalOpen, setCurrentUser }: LoginModalProps) {
                       Remember me
                     </label>
                   </div>
-
+                      {/* placeholder for if app were live */}
                   <div className="text-xs sm:text-small leading-5 mt-2 sm:mt-0 ">
                     <a
                       href="#"

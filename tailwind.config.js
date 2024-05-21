@@ -6,7 +6,8 @@ export default {
       colors: {
         transparent: "transparent",
         main: "#A1E3D2",
-        secondary: "#FEC952"
+        secondary: "#FEC952",
+        darkerMain: "#72C2AD"
       },
     },
   },
