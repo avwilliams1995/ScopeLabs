@@ -3,6 +3,7 @@ Scope Labs Take Home Assessment
 
 # Frontend - React.js/Typescript and Tailwind
 # Backend - Node.js/Express.js 
+# Design - Created a Figma (in root folder), but did not spend too much time on it since I was on a bit of a time crunch. 
 
 ## Overview
 
