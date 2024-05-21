@@ -6,7 +6,7 @@ Scope Labs Take Home Assessment
 
 ## Overview
 
-This is a web application that allows users to create, comment on, and watch educational videos. For a given user, they are given the opportunity to create posts, edit posts, comment on posts, and view videos. 
+This is a web application that allows users to create, comment on, and watch educational videos. For a user, they are given the opportunity to create posts, edit posts, comment on posts, and view videos. 
 
 ## Features
 
