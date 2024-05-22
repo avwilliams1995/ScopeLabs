@@ -60,7 +60,7 @@ This is a web application that allows users to create, comment on, and watch edu
 ##### Drawbacks
 
 1. For this assessment, a user being able to view all the posts instead of just their own posts would be ideal. This would enable interaction between users, and create more of a social network inside the application. Because the database on FastApi is only set up to fetch for one specific user's videos and not all videos, the post cards displayed will only be the posts made by the user that is logged in. 
-2. Was on a bit of a time crunch, so didn't have time to optimize UI/UX design or test.
+2. Was on a bit of a time crunch, so didn't have time to optimize UI/UX design, test, error handling, etc.
 
 
 ###### Final Thoughts
